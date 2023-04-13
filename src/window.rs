@@ -463,6 +463,7 @@ where
                     self.egui_input.events.push(egui::Event::Key {
                         key,
                         pressed,
+                        repeat: event.repeat,
                         modifiers: self.egui_input.modifiers,
                     });
                 }

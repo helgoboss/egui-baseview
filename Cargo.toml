@@ -19,8 +19,8 @@ opengl = ["egui_glow", "baseview/opengl"]
 links = ["webbrowser"]
 
 [dependencies]
-egui = "0.19"
-egui_glow = { version = "0.19", optional = true }
+egui = "0.21.0"
+egui_glow = { version = "0.21.0", optional = true }
 keyboard-types = { version = "0.6.1", default-features = false }
 baseview = { git = "https://github.com/helgoboss/baseview.git", branch = "realearn" }
 raw-window-handle = "0.4.2"
