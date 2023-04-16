@@ -328,7 +328,14 @@ where
             }
 
             if let Some(open_url) = platform_output.open_url {
-                open_url_in_browser(&open_url.url);
+                #[cfg(windows)]
+                {
+                    window.defer(move || open_url_in_browser(&open_url.url));
+                }
+                #[cfg(not(windows))]
+                {
+                    open_url_in_browser(&open_url.url);
+                }
             }
             if !platform_output.copied_text.is_empty() {
                 if let Some(clipboard_ctx) = &mut self.clipboard_ctx {
